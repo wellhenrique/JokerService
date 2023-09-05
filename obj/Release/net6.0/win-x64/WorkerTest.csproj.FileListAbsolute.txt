@@ -1,0 +1,5 @@
+C:\Users\Pichau\Documents\projeto-teste\JokerService\obj\Release\net6.0\win-x64\JokerService.csproj.AssemblyReference.cache
+C:\Users\Pichau\Documents\projeto-teste\JokerService\obj\Release\net6.0\win-x64\JokerService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Pichau\Documents\projeto-teste\JokerService\obj\Release\net6.0\win-x64\JokerService.AssemblyInfoInputs.cache
+C:\Users\Pichau\Documents\projeto-teste\JokerService\obj\Release\net6.0\win-x64\JokerService.AssemblyInfo.cs
+C:\Users\Pichau\Documents\projeto-teste\JokerService\obj\Release\net6.0\win-x64\JokerService.csproj.CoreCompileInputs.cache

@@ -12,7 +12,7 @@ IHostBuilder builder = Host.CreateDefaultBuilder(args)
         LoggerProviderOptions.RegisterProviderOptions<
             EventLogSettings, EventLogLoggerProvider>(services);
 
-        services.AddSingleton<ServicoDePiada>();
+        services.AddSingleton<Main>();
         services.AddHostedService<WindowsBackgroundService>();
 
         // See: https://github.com/dotnet/runtime/issues/47303

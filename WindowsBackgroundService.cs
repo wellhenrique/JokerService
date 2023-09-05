@@ -1,14 +1,16 @@
+using System.Reflection;
+
 namespace App.WindowsService;
 
 public sealed class WindowsBackgroundService : BackgroundService
 {
-    private readonly ServicoDePiada _jokeService;
+    private readonly Main _mainService;
     private readonly ILogger<WindowsBackgroundService> _logger;
 
     public WindowsBackgroundService(
-        ServicoDePiada jokeService,
+        Main mainService,
         ILogger<WindowsBackgroundService> logger) =>
-        (_jokeService, _logger) = (jokeService, logger);
+        (_mainService, _logger) = (mainService, logger);
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
@@ -16,10 +18,21 @@ public sealed class WindowsBackgroundService : BackgroundService
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                string joke = _jokeService.GetJoke();
-                _logger.LogWarning("{Joke}", joke);
+                // string message = $"UserProfile: {Environment.SpecialFolder.UserProfile}";
+                // _logger.LogWarning(message);
+                // string message1 = $"Sysotem.Envirnment.UserName: {System.Environment.UserName}";
+                // _logger.LogWarning(message1);
 
-                await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+                // string message2 = $"Assembly.GetEntryAssembly: {Assembly.GetEntryAssembly().Location}";
+                // _logger.LogWarning(message2);
+
+                string message = $"Environment.SpecialFolder.ApplicationData: {Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}";
+                _logger.LogWarning(message);
+                string message1 = $"Environment.SpecialFolder.UserProfile: {Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}";
+                _logger.LogWarning(message1);
+
+                Main app = new();
+                app.Run();
             }
         }
         catch (TaskCanceledException)
