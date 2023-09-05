@@ -1,5 +1,3 @@
-using JokerService.SyncXmlWithCloud.DotEnv;
-
 namespace App.WindowsService
 {
   public sealed class Main
@@ -13,7 +11,6 @@ namespace App.WindowsService
 
     public void Run()
     {
-      DotEnv.Load();
       List<CompanyConfig>? configjsonContentList = ConectaFacilDirectoryHelper.LoadConfiguredCompaniesOnConfigsFolder();
 
       if (configjsonContentList?.Count > 0)

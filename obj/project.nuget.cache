@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JsZzF/7zMVSbZR5s5cdR3OhbHtzDR2dLAhewN3yuY8QlgMTDoNCckoR6NRp58hqKuK/V+4opfY+fgYaL/BFDTA==",
+  "dgSpecHash": "Qhi4LqWdGitGlcwxSOyNrzQbCNQ/ONHw9oNRqg0y/gbX++GQq2z0BKOdaT9jBW5eWck2H6lDmudohtOfkD62bw==",
   "success": true,
   "projectFilePath": "F:\\JokerService\\JokerService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\wellhenrique\\.nuget\\packages\\cliwrap\\3.6.4\\cliwrap.3.6.4.nupkg.sha512",
     "C:\\Users\\wellhenrique\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\wellhenrique\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\wellhenrique\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.3\\microsoft.extensions.configuration.binder.7.0.3.nupkg.sha512",

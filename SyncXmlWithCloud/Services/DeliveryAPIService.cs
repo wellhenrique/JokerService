@@ -10,9 +10,10 @@ public class DeliveryAPIService
 
   public DeliveryAPIService()
   {
+    string myApiUrl = Environment.GetEnvironmentVariable("MY_API_URL");
     _httpClient = new HttpClient
     {
-      BaseAddress = new Uri("http://localhost:5289")
+      BaseAddress = new Uri(myApiUrl)
     };
   }
 
