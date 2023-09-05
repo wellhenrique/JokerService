@@ -12,28 +12,14 @@ public sealed class WindowsBackgroundService : BackgroundService
         ILogger<WindowsBackgroundService> logger) =>
         (_mainService, _logger) = (mainService, logger);
 
-    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    protected override Task ExecuteAsync(CancellationToken stoppingToken)
     {
         try
         {
-            while (!stoppingToken.IsCancellationRequested)
-            {
-                // string message = $"UserProfile: {Environment.SpecialFolder.UserProfile}";
-                // _logger.LogWarning(message);
-                // string message1 = $"Sysotem.Envirnment.UserName: {System.Environment.UserName}";
-                // _logger.LogWarning(message1);
+            Main app = new(_logger);
+            app.Run();
 
-                // string message2 = $"Assembly.GetEntryAssembly: {Assembly.GetEntryAssembly().Location}";
-                // _logger.LogWarning(message2);
-
-                string message = $"Environment.SpecialFolder.ApplicationData: {Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}";
-                _logger.LogWarning(message);
-                string message1 = $"Environment.SpecialFolder.UserProfile: {Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)}";
-                _logger.LogWarning(message1);
-
-                Main app = new();
-                app.Run();
-            }
+            Console.ReadLine();
         }
         catch (TaskCanceledException)
         {
@@ -54,5 +40,7 @@ public sealed class WindowsBackgroundService : BackgroundService
             // recovery options, we need to terminate the process with a non-zero exit code.
             Environment.Exit(1);
         }
+
+        return Task.CompletedTask;
     }
 }

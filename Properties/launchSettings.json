@@ -1,11 +1,12 @@
-﻿{
+{
   "profiles": {
     "JokerService": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
-      }
+        "DOTNET_ENVIRONMENT": "Development",
+        "MY_API_URL": "http://localhost:3002/"
+      },
+      "dotnetRunMessages": true
     }
   }
 }

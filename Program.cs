@@ -17,10 +17,14 @@ IHostBuilder builder = Host.CreateDefaultBuilder(args)
 
         // See: https://github.com/dotnet/runtime/issues/47303
         services.AddLogging(builder =>
-        {
-            builder.AddConfiguration(
-                context.Configuration.GetSection("Logging"));
-        });
+            {
+                builder.AddConfiguration(context.Configuration.GetSection("Logging"));
+                builder.AddConsole(); // You can add other logging providers as needed
+                builder.AddEventLog(); // Add EventLog as a logging provider if required
+                builder.AddDebug();
+                builder.AddEventSourceLogger();
+            });
+
     });
 
 IHost host = builder.Build();

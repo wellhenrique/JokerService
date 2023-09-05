@@ -171,9 +171,9 @@ public class XmlToCloudSyncer
 
     //verify xml type
     private void SendXmlToCloud(XmlParser parsedXml)
-    {                       //xml is
-        bool IsCancellationEvent = ShouldRequestCancellation(parsedXml);
-        if (IsCancellationEvent)
+    {
+        bool xmlIsCancellationEvent = XmlEventTypeIsCancellation(parsedXml);
+        if (xmlIsCancellationEvent)
         {
             /** Extrai a chave da NFe e solicitação de cancelamento para a API */
             ExtractChNFeAndRequestCancellation(parsedXml);
@@ -183,7 +183,7 @@ public class XmlToCloudSyncer
         ExtractNFeValuesAndRequestCreationDelivery(parsedXml);
     }
 
-    private static bool ShouldRequestCancellation(XmlParser parsedXml)
+    private static bool XmlEventTypeIsCancellation(XmlParser parsedXml)
     {
         string? eventType = parsedXml.GetTpEvento();
         return eventType == "110111";

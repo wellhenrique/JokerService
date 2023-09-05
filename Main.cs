@@ -1,10 +1,19 @@
+using JokerService.SyncXmlWithCloud.DotEnv;
+
 namespace App.WindowsService
 {
   public sealed class Main
   {
+    private readonly ILogger<WindowsBackgroundService> _logger;
+
+    public Main(ILogger<WindowsBackgroundService> logger)
+    {
+      _logger = logger;
+    }
 
     public void Run()
     {
+      DotEnv.Load();
       List<CompanyConfig>? configjsonContentList = ConectaFacilDirectoryHelper.LoadConfiguredCompaniesOnConfigsFolder();
 
       if (configjsonContentList?.Count > 0)
